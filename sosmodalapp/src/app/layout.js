@@ -1,5 +1,7 @@
+import { useClient } from 'next/data-client';
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Cabecalho from '@/components/Cabecalho/Cabecalho'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -9,12 +11,15 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
+  useClient();
+  
   return (
     <html lang="en">
       <body className={inter.className}>
 
         <Cabecalho/>
-        
+
         {children}
       
       <Rodape/>
